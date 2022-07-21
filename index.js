@@ -48,17 +48,17 @@ $(document).ready(function () {
     updateCartTotal();
   });
 
-  $('#addItem').on('submit', function(event) {
+  $('#addItem').on('click', function(event) {
     event.preventDefault();
-    var product = $(this).find('input[name="product"]').val();
-    var quantity = $(this).find('input[name="quantity"]').val();
-    var unitPrice = $(this).find('input[name="price"]').val();
+    var newItem = $('#newItem').val();
+    var newPrice = $('#newPrice').val();
+    var newQuantity = $('#ammount').val();
 
-    $('tbody').append('<tr class="item">' +
-    '<td class="product">' + product + '</td>' +
-    '<td class="quantity"><input type="number" value="' + quantity + '" /></td>' +
-    '<td class="unit-price"><input type="number" value="' + unitPrice + '" /></td>' +
-    '<td class="total">' + (quantity * unitPrice) + '</td>' +    
+    $('#lastRow').after('<tr class="item">' +
+    '<td class="product">' + newItem + '</td>' +
+    '<td class="quantity"><input type="number" value="' + newQuantity + '" /></td>' +
+    '<td class="unit-price"><input type="number" value="' + newPrice + '" /></td>' +
+    '<td class="total">' + newQuantity * newPrice + '</td>' +    
     '<td><button class="remove-btn">remove</button></td>' +
   '</tr>');
     updateSubtotal($('tbody tr:last-child'));
@@ -66,10 +66,7 @@ $(document).ready(function () {
     $(this).find('[name="product"]').val('');
     $(this).find('[name="quantity"]').val('');
     $(this).find('[name="price"]').val('');
-    $(".remove-btn").on("click", function () {
-        $(this).parent().parent().remove().fadeOut(500);
-        updateCartTotal();
-      });
+    
 
   })
 });
@@ -85,8 +82,7 @@ $('tr input').on('input', function () {
 
 
 //make spinners visible
-$(function () {
-    $('#spinner').spinner({
-       opacity: 1
-    });
-});
+$(".remove-btn").on("click", function () {
+    $(this).parent().parent().remove().fadeOut(500);
+    updateCartTotal();
+  });

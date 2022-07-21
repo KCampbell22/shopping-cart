@@ -40,18 +40,18 @@
               <td class="total"><input type="number" value=""></td>
               <td><button class="remove-btn">remove</button></td>
             </tr>
-            <tr class="item">
+            <tr class="item" id="lastRow">
               <td class="product">Airpods</td>
               <td class="quantity"><input type="number" value="3"></td>
               <td class="unit-price"><input type="number" value="199"></td>
               <td class="total"><input id="spinner" type="number" value=""></td>
               <td><button class="remove-btn">remove</button></td>
             </tr>
-            <tr class="col-xxl-12 col-md-8 col-sm-12 mt-2 mb-4" id="addItem">
-              <td><input class="mx-2" name="product" type="text" placeholder="Product" required/></td>
-              <td><input class="mx-2" name="quantity" type="number" placeholder="Ammount"/></td>
-              <td><input class="mx-2" name="price" type="number" placeholder="Cost"/></td>
-              <td colspan="2"><button class="btn btn-primary btn-sm">add</button></td> 
+            <tr id="newRow" class="col-xxl-12 col-md-8 col-sm-12 mt-2 mb-4">
+              <td><input id="newItem" class="mx-2" name="product" type="text" placeholder="Product" required/></td>
+              <td><input id="ammount" class="mx-2" name="quantity" type="number" placeholder="Ammount"/></td>
+              <td><input id="newPrice" class="mx-2" name="price" type="number" placeholder="Cost"/></td>
+              <td colspan="2"><button id="addItem" type="submit" class="btn btn-primary btn-sm">add</button></td> 
             </tr>
           </tbody>
           <tfoot>
