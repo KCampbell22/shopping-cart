@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
+    "
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="/jquery-ui.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-12">
+        <table class="table table-responsive table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Total</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="item">
+              <td class="product">Airpods</td>
+              <td class="quantity"><input type="number" value="4"></td>
+              <td class="unit-price"><input type="number" value="199"></td>
+              <td class="total"><input type="number" value=""></td>
+              <td><button class="remove-btn">remove</button></td>
+            </tr>
+            <tr class="item">
+              <td class="product">Airpods</td>
+              <td class="quantity"><input type="number" value="3"></td>
+              <td class="unit-price"><input type="number" value="199"></td>
+              <td class="total"><input id="spinner" type="number" value=""></td>
+              <td><button class="remove-btn">remove</button></td>
+            </tr>
+            <tr class="col-xxl-12 col-md-8 col-sm-12 mt-2 mb-4" id="addItem">
+              <td><input class="mx-2" name="product" type="text" placeholder="Product" required/></td>
+              <td><input class="mx-2" name="quantity" type="number" placeholder="Ammount"/></td>
+              <td><input class="mx-2" name="price" type="number" placeholder="Cost"/></td>
+              <td colspan="2"><button class="btn btn-primary btn-sm">add</button></td> 
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3"></td>
+              <td>Total: $ <span id="cartTotal">0</span></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+       
+      </div>
+      
+    </div>
+  </body>
+</html>
