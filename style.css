@@ -15,8 +15,7 @@ body{
 }
 .container{
     height: 100vh;
-    display: flex;
-    align-items: center;
+    
     margin: 0 auto;
     padding: 0 20px;
     background-color: rgb(229, 236, 244);

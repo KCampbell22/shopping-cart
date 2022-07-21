@@ -7,17 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
     "
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
-    "></script>
     <link href="style.css" rel="stylesheet" />
-    <script src="/jquery-ui.min.js"></script>
-    <script src="index.js"></script>
   </head>
   <body>
     <div class="container">
@@ -38,22 +33,17 @@
               <td class="quantity"><input type="number" value="4"></td>
               <td class="unit-price"><input type="number" value="199"></td>
               <td class="total"><input type="number" value=""></td>
-              <td><button class="remove-btn">remove</button></td>
+              <td><button class="btn remove">remove</button></td>
             </tr>
             <tr class="item" id="lastRow">
               <td class="product">Airpods</td>
               <td class="quantity"><input type="number" value="3"></td>
               <td class="unit-price"><input type="number" value="199"></td>
               <td class="total"><input id="spinner" type="number" value=""></td>
-              <td><button class="remove-btn">remove</button></td>
-            </tr>
-            <tr id="newRow" class="col-xxl-12 col-md-8 col-sm-12 mt-2 mb-4">
-              <td><input id="newItem" class="mx-2" name="product" type="text" placeholder="Product" required/></td>
-              <td><input id="ammount" class="mx-2" name="quantity" type="number" placeholder="Ammount"/></td>
-              <td><input id="newPrice" class="mx-2" name="price" type="number" placeholder="Cost"/></td>
-              <td colspan="2"><button id="addItem" type="submit" class="btn btn-primary btn-sm">add</button></td> 
+              <td><button class="btn remove">remove</button></td>
             </tr>
           </tbody>
+          
           <tfoot>
             <tr>
               <td colspan="3"></td>
@@ -61,10 +51,19 @@
               <td></td>
             </tr>
           </tfoot>
+         
         </table>
        
       </div>
-      
+      <form class="col-12 mt-2 mb-4" id="addItem">
+        <input class="mx-2" name="product" type="text" placeholder="Product" required/>
+        <input class="mx-2" name="quantity" type="number" placeholder="Ammount"/>
+        <input class="mx-2" name="price" type="number" placeholder="Cost"/>
+        <button class="btn btn-primary btn-sm">add</button>
+      </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
   </body>
 </html>

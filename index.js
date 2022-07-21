@@ -36,10 +36,41 @@ $(document).ready(function () {
   updateCartTotal();
 });
 
+
+
+
+
+
+$(document).ready(function () {
+  $('#addItem').on('submit', function(event) {
+    // stop from default behavior
+    event.preventDefault();
+    var product = $(this).children('[name=product]').val();
+    var price = $(this).children('[name=price]').val();
+    var quantity = $(this).children('[name=quantity]').val();
+
+    $('tbody').append('<tr class="item">' +
+    '<td class="product">' + product + '</td>' +
+    '<td class="quantity"><input type="number" value="' + quantity + '" /></td>' +
+    '<td class="unit-price"><input type="number" value="' + price + '" /></td>' +
+    '<td class="total">' + (quantity * price) + '</td>' +    
+    '<td><button class="btn remove">remove</button></td>' +
+  '</tr>');
+    updateSubtotal($('tbody tr:last-child'));
+    updateCartTotal();
+    $(this).children('[name=product]').val('');
+    $(this).children('[name=quantity]').val('');
+    $(this).children('[name=price]').val('');
+    
+
+  });
+});
+
+
 $(document).ready(function () {
   updateCartTotal();
-  $(".remove-btn").on("click", function () {
-    $(this).parent().parent().remove().fadeOut(500);
+  $('.btn.remove').on("click", function (event) {
+    $(this).closest('tr').remove().fadeOut(500);
     updateCartTotal();
   });
 
@@ -47,31 +78,7 @@ $(document).ready(function () {
     updateSubtotal($(this).parent().parent());
     updateCartTotal();
   });
-
-  $('#addItem').click(function(event) {
-    // stop from default behavior
-    event.preventDefault();
-    var newItem = $('#newItem').val();
-    var newPrice = $('#newPrice').val();
-    var newQuantity = $('#ammount').val();
-
-    $('#lastRow').after('<tr class="item">' +
-    '<td class="product">' + newItem + '</td>' +
-    '<td class="quantity"><input type="number" value="' + newQuantity + '" /></td>' +
-    '<td class="unit-price"><input type="number" value="' + newPrice + '" /></td>' +
-    '<td class="total">' + newQuantity * newPrice + '</td>' +    
-    '<td><button class="remove-btn">remove</button></td>' +
-  '</tr>');
-    updateSubtotal($('tbody tr:last-child'));
-    updateCartTotal();
-    $(this).find('[name="product"]').val('');
-    $(this).find('[name="quantity"]').val('');
-    $(this).find('[name="price"]').val('');
-    
-
-  })
 });
-
 var timeout;
 $('tr input').on('input', function () {
     clearTimeout(timeout);
@@ -80,5 +87,10 @@ $('tr input').on('input', function () {
     }, 500);
     });
 
+
+$(document).on('click', '.btn.remove', function (event) {
+  $(this).closest('tr').remove().fadeOut(500);
+  updateCartTotal();
+});
 
 
