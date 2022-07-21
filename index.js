@@ -48,7 +48,8 @@ $(document).ready(function () {
     updateCartTotal();
   });
 
-  $('#addItem').on('click', function(event) {
+  $('#addItem').click(function(event) {
+    // stop from default behavior
     event.preventDefault();
     var newItem = $('#newItem').val();
     var newPrice = $('#newPrice').val();
@@ -81,8 +82,3 @@ $('tr input').on('input', function () {
 
 
 
-//make spinners visible
-$(".remove-btn").on("click", function () {
-    $(this).parent().parent().remove().fadeOut(500);
-    updateCartTotal();
-  });
